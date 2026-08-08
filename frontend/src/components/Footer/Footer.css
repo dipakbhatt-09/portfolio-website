@@ -1,0 +1,112 @@
+html{
+    scroll-behavior:smooth;
+}
+
+.footer{
+    background:#161b26;
+    border-top:1px solid rgba(0,234,255,.15);
+    padding:28px 8%;
+    font-family:"Outfit",sans-serif;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+}
+
+
+
+.footer-left{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+}
+
+.footer-text{
+    margin:0;
+    color:#d1d5db;
+    font-size:16px;
+}
+
+.footer-name{
+    color:#00eaff;
+    font-weight:700;
+}
+
+.footer-copy{
+    margin:0;
+    color:#8b95a7;
+    font-size:14px;
+}
+
+
+
+.footer-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.footer-message{
+    text-align:right;
+}
+
+.footer-message h4{
+    margin:0;
+    color:#00eaff;
+    font-size:18px
+}
+
+.footer-message p{
+    margin-top:4px;
+    color:#9ca3af;
+    font-size:14px;
+}
+
+
+
+.back-to-top{
+    width:58px;
+    height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    background:linear-gradient(135deg,#00eaff,#3b82f6);
+    color:#111827;
+    border-radius:18px;
+    font-size:26px;
+    font-weight:bold;
+    box-shadow:0 0 20px rgba(0,234,255,.35);
+    transition:all .35s ease;
+}
+
+.back-to-top:hover{
+    transform:translateY(-8px) scale(1.08);
+    box-shadow:0 0 35px rgba(0,234,255,.7);
+}
+
+
+@media(max-width:768px){
+.footer-container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.footer-left{
+    align-items:center;
+}
+
+.footer-right{
+    flex-direction:column;
+    gap:15px;
+}
+
+.footer-message{
+    text-align:center;
+}
+}
