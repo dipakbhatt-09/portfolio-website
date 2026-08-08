@@ -1,26 +1,24 @@
 import os
 from pathlib import Path
+import dj_database_url
 
-
-# Base configuration
+# Base Configuration
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 # Security
-
 SECRET_KEY = os.environ.get(
     "DJANGO_SECRET_KEY",
-    "django-insecure-local-development-key"
+    "django-insecure-local-development-key",
 )
 
-
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
+    ".onrender.com",
 ]
-
 
 
 # Applications
@@ -43,9 +41,7 @@ INSTALLED_APPS = [
 ]
 
 
-
 # Middleware
-
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
@@ -58,9 +54,7 @@ MIDDLEWARE = [
 ]
 
 
-
-# URL & Application configuration
-
+# URL & Application Configuration
 ROOT_URLCONF = "config.urls"
 
 WSGI_APPLICATION = "config.wsgi.application"
@@ -68,7 +62,6 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 
 # Templates
-
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -87,17 +80,12 @@ TEMPLATES = [
 
 
 # Database
-
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    "default": dj_database_url.config()
 }
 
 
-
-# Password validation
+# Password Validation
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": (
@@ -126,34 +114,33 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 # Internationalization
 LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
 
 USE_I18N = True
+
 USE_TZ = True
 
 
 
-# Static files
+# Static Files
 STATIC_URL = "static/"
 
 
-# Media files
+# Media Files
 MEDIA_URL = "/media/"
+
 MEDIA_ROOT = BASE_DIR / "media"
 
 
 
 # CORS
-# Local React/Vite frontend.
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 
 
-
-# Default primary key
+# Default Primary Key
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
