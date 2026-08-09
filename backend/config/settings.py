@@ -2,6 +2,7 @@ import os
 from pathlib import Path
 import dj_database_url
 
+
 # Base Configuration
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -60,7 +61,6 @@ ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 
 
-
 # Templates
 TEMPLATES = [
     {
@@ -78,10 +78,11 @@ TEMPLATES = [
 ]
 
 
-
 # Database
 DATABASES = {
-    "default": dj_database_url.config()
+    "default": dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
+    )
 }
 
 
@@ -124,7 +125,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 # Static Files
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -132,9 +132,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Media Files
 MEDIA_URL = "/media/"
-
 MEDIA_ROOT = BASE_DIR / "media"
-
 
 
 # CORS
