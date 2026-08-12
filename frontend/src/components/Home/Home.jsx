@@ -5,7 +5,7 @@ import "./Home.css";
 
 import {
   //FaDownload,
-  //FaEnvelope,
+  FaEnvelope,
   FaGithub,
   FaLinkedin,
   FaFacebook,
