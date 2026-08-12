@@ -135,6 +135,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # Media Files
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+   # Media Files
 
 
 # CORS
