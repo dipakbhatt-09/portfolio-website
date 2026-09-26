@@ -153,7 +153,7 @@ function Home() {
             <div className="image-ring"></div>
 
             <img
-              src={hero.profile_image}
+              src="/profile.jpg"
               alt={hero.full_name}
               className="profile-image"
             />
