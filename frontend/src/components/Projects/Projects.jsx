@@ -26,6 +26,14 @@ const Projects = () => {
     }
   };
 
+  const getProjectImage = (project) => {
+    if (project.title === "Social Blog App") {
+      return "/projects/social.jpeg";
+    }
+
+    return "/projects/logo.jpg";
+  };
+
   if (loading) {
     return (
       <section className="projects-section">
@@ -51,7 +59,7 @@ const Projects = () => {
 
               <div className="project-image-box">
                 <img
-                  src={project.image}
+                  src={getProjectImage(project)}
                   alt={project.title}
                   className="project-image"
                 />
