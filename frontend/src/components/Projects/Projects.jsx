@@ -31,7 +31,11 @@ const Projects = () => {
       return "/projects/social.jpeg";
     }
 
-    return "/projects/logo.jpg";
+    if (project.title === "Weather App") {
+      return "/projects/weather.jpg";
+    }
+
+    return "/projects/Wrather.jpeg";
   };
 
   if (loading) {
